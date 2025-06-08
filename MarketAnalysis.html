@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Analysis – OASCENT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-dark: #0a0e17;
+      --primary-blue: #0c1a3a;
+      --accent-blue: #0d6efd;
+      --accent-teal: #20c997;
+      --accent-purple: #6f42c1;
+      --text-light: #f8f9fa;
+      --text-gray: #adb5bd;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Calibri', sans-serif;
+      color: var(--text-light);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(32, 201, 151, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(111, 66, 193, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 50% 30%, rgba(13, 110, 253, 0.1) 0%, transparent 30%),
+        var(--primary-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      overflow-x: hidden;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: var(--accent-teal);
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      user-select: none;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--primary-blue);
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      will-change: transform;
+    }
+
+    .chart-section {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+      padding: 30px 40px;
+      text-align: left;
+      overflow-y: auto;
+      max-height: 75vh;
+    }
+
+    .chart-section img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #272b33;
+      border-radius: 8px;
+      margin: 20px 0;
+      user-select: none;
+    }
+
+    .chart-section p,
+    .chart-section li {
+      color: var(--text-gray);
+      line-height: 1.6;
+      font-size: 1rem;
+      user-select: text;
+    }
+
+    .chart-section h2 {
+      color: var(--accent-purple);
+      margin-top: 30px;
+      font-size: 1.5rem;
+      user-select: text;
+    }
+
+    .chart-section h3 {
+      color: var(--accent-purple);
+      font-size: 1.3rem;
+      margin-top: 25px;
+      user-select: text;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(32, 201, 151, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+
+    .carousel-button:hover {
+      background: var(--accent-teal);
+    }
+
+    .carousel-button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .chart-section h2 {
+        font-size: 1.2rem;
+      }
+      .chart-section {
+        padding: 20px 15px;
+        max-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Analyze Your Market</h1>
+
+  <div class="carousel" aria-label="Market charts and summaries carousel">
+    <button class="carousel-button prev" aria-label="Previous Slide" disabled>&lt;</button>
+    <div class="carousel-track">
+      <section class="chart-section" aria-label="GTA Housing Market Summary">
+        <h2>GTA Housing Market Summary (Jan 2024 – May 2025)</h2>
+        <p><strong>Over the 17-month period</strong>, the Greater Toronto Area (GTA) presents a concerning mismatch between housing supply and population trends — signaling a market that may be heading for correction or strategic repricing.</p>
+        <img src="gta.png" alt="GTA Housing vs Population Chart" />
+        <h2>Homes Built</h2>
+        <ul>
+          <li>Monthly new housing starts averaged ~3,000 units, peaking at 3,400 in August 2024.</li>
+          <li>Construction remained steady, reflecting developer confidence despite market headwinds.</li>
+        </ul>
+        <h2>Population Change</h2>
+        <ul>
+          <li>Early 2024 saw positive net migration (+1,200 in Jan), but this reversed sharply.</li>
+          <li>By early 2025, the GTA was losing population at a rate of up to 1,400 per month.</li>
+        </ul>
+        <h2>Market Implications</h2>
+        <ul>
+          <li><strong>Oversupply Risk:</strong> Builders may be outpacing demand, risking surplus inventory.</li>
+          <li><strong>Affordability Mismatch:</strong> Prices could fall unless sellers adjust expectations.</li>
+          <li><strong>Investor Caution:</strong> Rental yields may compress in overbuilt areas.</li>
+          <li><strong>Buyer Opportunity:</strong> Patience could yield lower prices in late 2025.</li>
+        </ul>
+      </section>
+
+      <section class="chart-section" aria-label="Market Summary GTA Housing Trends">
+        <h2>📊 Market Summary – GTA Housing Trends (2024–2025)</h2>
+        <img src="indacator.png" alt="Market Summary Illustration Placeholder" />
+        <h3>Core Stress Indicators Analysis</h3>
+        <p>Average Days on Market (DOM)</p>
+        <li>Measures how long properties remain active before selling</li>
+        <li>Rising DOM indicates cooling demand or buyer hesitation</li>
+        <li>Shorter DOM typically signals seller's market conditions</li>
+
+        <h3>Price Reductions (%)</h3>
+        <li>Price reductions rose from 2% to over 8% — sellers are adjusting to lack of demand.</li>
+        <li>Increasing reductions suggest softening prices or overpriced listings</li>
+        <li>Measures how long properties remain active before selling</li>
+        
+        <h3>Market Pulse Interpretation</h3>
+        <h4>Seasonal Pattern Recognition: </h4>
+        <p>The monthly tracking from Feb 2024 through Dec 2024 (plus 2023 comparatives) allows us to:</p>
+        <li>Identify typical seasonal fluctuations (spring surge vs. winter slowdown)</li>
+        <li>Spot abnormal deviations from historical patterns</li> 
+        <li>Gauge market momentum shifts</li>
+        
+        <h3>Critical Pressure Points</h3>
+        <h4>Comparing 2024 data against 2023 benchmarks helps us:</h4>
+        <li>Determine if current stress levels exceed historical norms</li>
+        <li>Identify whether we're seeing normalization or concerning trends</li>
+        <li>Evaluate market recovery or deterioration pace</li>
+        
+        <h2>Market Health Assessment</h2>
+        <h4>Bullish Signals (Low Stress)</h4>
+        <li>DOM consistently < 20 days</li>
+        <li>Price reductions < 15% of listings</li>
+        <li>Stable month-over-month metrics</li>
+
+        <h4>Bearish Signals (High Stress)</h4>
+        <li>DOM exceeding 30+ days</li>
+        <li>Price reductions > 25% of listings</li>
+        <li>Accelerating month-over-month increases</li>
+
+        <h4>Strategic Advice for Clients</h4>
+<p><strong>For Sellers:</strong>
+
+"These metrics dictate pricing strategy. Rising DOM and reduction percentages mean we must price aggressively from day one and ensure perfect staging. Every overpriced listing contributes to these stress statistics."</p>
+
+<p><strong>For Buyers:</strong>
+
+"Increasing stress indicators create negotiation leverage. Look for properties with extended DOM where sellers may be more flexible. But verify whether reductions reflect true value opportunities or underlying property issues."</p>
+
+<p><strong>For Investors:</strong>
+
+"Monitor these metrics monthly. Sustained high stress indicators often precede price corrections. DOM spikes typically lead price declines by 60-90 days."</p>
+
+        <h3>Realtor Insight</h3>
+        <p>If you're selling: Price realistically and expect longer timelines.</p>
+        <p>If you're buying: It's shifting to a buyer's market — negotiate.</p>
+      </section>
+
+      <!-- ✅ NEW SLIDE BELOW -->
+      <section class="chart-section" aria-label="Rental Vacancy Trends">
+        <h2>📉 New Listings vs Sales Closed – GTA (2024–2025)</h2>
+        <img src="drophou.png" alt="Rental Vacancy Rate Chart" style="width: 60%; display: block; margin: 20px auto;" />
+        
+        <h3>Steep Decline in Market Activity</h3>
+       <p>New Listings: 
+        Started at 6,000 in Jan 2024 and plummeted to 1,000 by May 2025 – an 83% decrease. This indicates sellers are increasingly holding back.
+        Sales Closed: Started at 5,000 in Jan 2024 and also fell to 1,000 by May 2025 – an 80% decrease. This signals weakening buyer demand or purchasing ability.</p>
+          <li><strong>Magnitude:</strong> A decline of this scale across both metrics within 17 months is highly significant and points to a substantial market cooldown.</li>
+          <li><strong>Suburbs:</strong> Surge in inventory is driving competition among landlords.</li>
+          <li><strong>Implication:</strong> Rent growth is slowing and tenants can negotiate better terms.</li>
+        
+        <h3>Parallel Decline Trajectory</h3>
+        <p>Both New Listings and Sales Closed follow a remarkably similar downward path throughout the entire period. This suggests a market where supply and demand are contracting in tandem, rather than one drastically outpacing the other.</p>
+
+        <h3>Market Balance Implication</h3>
+        <p><strong>Months of Supply (MOS):</strong> While the chart doesn't show inventory levels, the parallel decline suggests the market might have remained relatively balanced (neither strongly favouring buyers nor sellers) in terms of absorption rate despite falling volumes. However, the sheer drop in activity level is the dominant story.</p>
+        <p><strong>Convergence:</strong> By May 2025, both New Listings and Sales Closed converge at 1,000. This implies a market operating at a much lower equilibrium level than at the start of 2024.</p>
+        <h3>Interpretation & Market Implications</h3>
+        <p><strong>Market Cooldown:</strong> This data unequivocally signals a major slowdown in the GTA real estate market since early 2024. Transaction volumes have collapsed</p>
+<p><strong>Potential Drivers:</strong>
+Interest Rates: The most likely primary driver. Significant rate hikes by the Bank of Canada since early 2022 dramatically increased mortgage carrying costs, pricing many buyers out and making potential sellers hesitant to give up low-rate mortgages ("mortgage lock-in effect").</p>
+<p><strong>Affordability Crisis:</strong> Already stretched affordability reached a breaking point for many households.</p>
+
+<p><strong>Economic Uncertainty:</strong> Concerns about recession, job security, and inflation dampened buyer confidence and willingness to make large financial commitments.</p>
+
+<p><strong>Policy Changes:</strong> Potential speculation taxes or other regulatory measures could have contributed, though interest rates are the dominant factor.</p>
+
+<h3>Buyer & Seller Psychology</h3>
+
+<p><strong>Buyers:</strong> Facing high borrowing costs and economic uncertainty, many are delaying purchases or unable to qualify.</p> 
+
+<p><strong>Sellers:</strong> Reluctant to list due to potentially lower sale prices than peak, coupled with the disincentive of losing a low existing mortgage rate. This explains the sharp drop in new listings.</p> 
+
+</p>
+      </section>
+    </div>
+    <button class="carousel-button next" aria-label="Next Slide">&gt;</button>
+  </div>
+
+  <script>
+    (() => {
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.querySelector('.carousel-button.prev');
+      const nextBtn = document.querySelector('.carousel-button.next');
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      function updateButtons() {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === totalSlides - 1;
+      }
+
+      function goToSlide(index) {
+        if (index < 0 || index >= totalSlides) return;
+        currentIndex = index;
+        const moveAmount = -currentIndex * 100;
+        track.style.transform = `translateX(${moveAmount}%)`;
+        updateButtons();
+      }
+
+      prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+      // Swipe handling
+      let startX = 0;
+      let isDragging = false;
+
+      track.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      track.addEventListener('touchend', e => {
+        if (!isDragging) return;
+        isDragging = false;
+        const endX = e.changedTouches[0].clientX;
+        const diffX = endX - startX;
+
+        if (diffX > 50) {
+          goToSlide(currentIndex - 1); // Swipe right
+        } else if (diffX < -50) {
+          goToSlide(currentIndex + 1); // Swipe left
+        }
+      });
+
+      updateButtons();
+    })();
+  </script>
+</body>
+</html>
+
