@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Furnishings | Premium Furniture | Toronto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --autumn-red: #c44536;
+            --autumn-orange: #e67e22;
+            --autumn-yellow: #f1c40f;
+            --autumn-brown: #6d4c3d;
+            --autumn-dark: #2c3e50;
+            --autumn-light: #f9f5f0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--autumn-dark);
+            background-color: var(--autumn-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--autumn-brown) 0%, var(--autumn-dark) 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--autumn-orange);
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--autumn-orange);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--autumn-orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(109, 76, 61, 0.8)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--autumn-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--autumn-orange);
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--autumn-dark);
+        }
+
+        /* Materials Section */
+        .materials {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--autumn-brown);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--autumn-orange);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .material-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .material-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .material-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .material-content {
+            padding: 25px;
+        }
+
+        .material-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--autumn-brown);
+        }
+
+        .material-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 100px 0;
+            background-color: var(--autumn-light);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .location-header {
+            background-color: var(--autumn-brown);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .location-header h3 {
+            font-size: 1.8rem;
+        }
+
+        .location-body {
+            padding: 25px;
+        }
+
+        .location-body p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .location-body i {
+            color: var(--autumn-orange);
+            margin-right: 10px;
+            min-width: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--autumn-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--autumn-orange);
+            opacity: 0.2;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin: 20px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+
+        .author-info h4 {
+            color: var(--autumn-brown);
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--autumn-brown), var(--autumn-dark));
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--autumn-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--autumn-orange);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--autumn-orange);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            margin-right: 15px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--autumn-orange);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: var(--autumn-dark);
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-chair"></i>
+                <span>Artisan Furnishings</span>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#materials">Materials</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Crafting Timeless Furniture in Toronto</h1>
+            <p>Experience the perfect blend of premium materials, artisanal craftsmanship, and contemporary design. Each piece tells a story of quality and elegance.</p>
+            <div class="hero-btns">
+                <a href="#collections" class="btn">Explore Collections</a>
+                <a href="#locations" class="btn btn-outline">Visit Our Stores</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials" id="materials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Materials</h2>
+            </div>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80');"></div>
+                    <div class="material-content">
+                        <h3>Solid Hardwood</h3>
+                        <p>Our furniture begins with sustainably sourced oak, walnut, and maple woods. Each piece is hand-selected for grain quality and durability, then finished with natural oils to enhance its beauty and protect for generations.</p>
+                        <a href="#" class="btn">View Wood Collection</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');"></div>
+                    <div class="material-content">
+                        <h3>Luxury Fabrics</h3>
+                        <p>Experience unparalleled comfort with our premium fabrics. From Italian leathers to Belgian linens, each textile is chosen for its durability, texture, and aesthetic appeal. Our fabrics are stain-resistant and designed to last.</p>
+                        <a href="#" class="btn">View Upholstery</a>
+                    </div>
+                </div>
+                <div class="material-card">
+                    <div class="material-img" style="background-image: url('https://images.unsplash.com/photo-1558346648-9757f2fa4474?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                    <div class="material-content">
+                        <h3>Natural Marble</h3>
+                        <p>Our marble pieces are crafted from premium Carrara and Calacatta stones. Each slab is unique, with distinctive veining that adds character to tabletops, countertops, and decorative accents. Sealed for lasting beauty.</p>
+                        <a href="#" class="btn">View Marble Accents</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Canadian Locations</h2>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-header">
+                        <h3>Toronto Flagship</h3>
+                    </div>
+                    <div class="location-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 King Street West, Toronto, ON</p>
+                        <p><i class="fas fa-phone"></i> (416) 555-1234</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10am-8pm, Sun: 11am-6pm</p>
+                        <p><i class="fas fa-star"></i> Our flagship store featuring the complete collection and design studio</p>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-header">
+                        <h3>Vancouver Showroom</h3>
+                    </div>
+                    <div class="location-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 456 Granville Street, Vancouver, BC</p>
+                        <p><i class="fas fa-phone"></i> (604) 555-5678</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10am-7pm, Sun: 12pm-5pm</p>
+                        <p><i class="fas fa-star"></i> West coast inspired designs with mountain and ocean views</p>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-header">
+                        <h3>Montreal Atelier</h3>
+                    </div>
+                    <div class="location-body">
+                        <p><i class="fas fa-map-marker-alt"></i> 789 Rue Saint-Paul, Montreal, QC</p>
+                        <p><i class="fas fa-phone"></i> (514) 555-9012</p>
+                        <p><i class="fas fa-clock"></i> Tue-Sat: 10am-6pm, Sun-Mon: Closed</p>
+                        <p><i class="fas fa-star"></i> European-inspired designs in a historic Old Montreal building</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collections</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Living Room Collection">
+                    <div class="gallery-overlay">
+                        <h3>Signature Living</h3>
+                        <p>Elegant sofas and sectionals</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505692952047-1a78307da8f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Dining Collection">
+                    <div class="gallery-overlay">
+                        <h3>Artisan Dining</h3>
+                        <p>Handcrafted tables and chairs</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Bedroom Collection">
+                    <div class="gallery-overlay">
+                        <h3>Serene Bedrooms</h3>
+                        <p>Luxurious beds and storage</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Office Collection">
+                    <div class="gallery-overlay">
+                        <h3>Executive Workspace</h3>
+                        <p>Functional and beautiful offices</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Outdoor Collection">
+                    <div class="gallery-overlay">
+                        <h3>Garden & Terrace</h3>
+                        <p>Weather-resistant luxury</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Accent Pieces">
+                    <div class="gallery-overlay">
+                        <h3>Artisan Accents</h3>
+                        <p>Statement pieces for every room</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Experiences</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The walnut dining table we purchased has become the heart of our home. The craftsmanship is exceptional, and it's held up beautifully with two young children. Truly a family heirloom."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Toronto, ON</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As an interior designer, I only specify Artisan Furnishings for my high-end clients. Their attention to detail and premium materials make every project shine. The Montreal showroom is particularly inspiring."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Interior Designer, Vancouver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The marble coffee table is absolutely stunning. It arrived perfectly packaged and the installation team was professional and careful. Five years later, it still looks brand new. Worth every penny."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <p>Calgary, AB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Artisan Furnishings</h3>
+                    <p>Crafting exceptional furniture in Toronto since 1998. Each piece reflects our commitment to quality materials and timeless design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Showrooms</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Toronto, ON</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Vancouver, BC</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Montreal, QC</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Ottawa, ON</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Calgary, AB</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-truck"></i> Shipping & Delivery</a></li>
+                        <li><a href="#"><i class="fas fa-undo"></i> Returns & Exchanges</a></li>
+                        <li><a href="#"><i class="fas fa-tools"></i> Care & Maintenance</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Warranty Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-phone"></i> (888) 555-1234</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@artisanfurnishings.ca</a></li>
+                        <li><a href="#"><i class="fas fa-comments"></i> Design Consultation</a></li>
+                        <li><a href="#"><i class="fas fa-briefcase"></i> Trade Program</a></li>
+                        <li><a href="#"><i class="fas fa-newspaper"></i> Newsletter Signup</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Artisan Furnishings. All rights reserved. Crafted with passion in Toronto, Canada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.querySelector('i').classList.toggle('fa-bars');
+            mobileMenu.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                navLinks.classList.remove('active');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
