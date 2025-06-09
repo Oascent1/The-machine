@@ -34,6 +34,14 @@
       box-sizing: border-box;
     }
 
+    .gradient-text {
+  background: linear-gradient(to right, #20c997, #0d6efd, #6f42c1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  } 
+
+
     h1 {
       color: var(--accent-teal);
       margin-bottom: 25px;
@@ -148,7 +156,8 @@
   </style>
 </head>
 <body>
-  <h1>Analyze Your Market</h1>
+  <h1 class="gradient-text">Analyze Your Market</h1>
+
 
   <div class="carousel" aria-label="Market charts and summaries carousel">
     <button class="carousel-button prev" aria-label="Previous Slide" disabled>&lt;</button>
@@ -162,7 +171,7 @@
           <li>Monthly new housing starts averaged ~3,000 units, peaking at 3,400 in August 2024.</li>
           <li>Construction remained steady, reflecting developer confidence despite market headwinds.</li>
         </ul>
-        <h2>Population Change</h2>
+        <h2 >Population Change</h2>
         <ul>
           <li>Early 2024 saw positive net migration (+1,200 in Jan), but this reversed sharply.</li>
           <li>By early 2025, the GTA was losing population at a rate of up to 1,400 per month.</li>
@@ -335,3 +344,5 @@ Interest Rates: The most likely primary driver. Significant rate hikes by the Ba
   </script>
 </body>
 </html>
+
+
