@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Agent Demo Gallery – OASCENT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'calibri', calibri;
+      background-color: #0a0e17;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #00dffc;
+    }
+
+    .agent-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .agent-card {
+      background-color: #111622;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0, 223, 252, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0, 223, 252, 0.3);
+    }
+
+    h2 {
+      color: #00dffc;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>OASCENT – AI Agent Demo Gallery</h1>
+  
+  <h3 style="text-align: center;">
+  Smart, 24/7 AI chatbots that book appointments, answer FAQs, and turn website visitors into paying clients—without you lifting a finger
+</h3>
+
+  <div class="agent-container">
+    <div class="agent-card">
+      <h2>🦷 Dental Clinic Assistant</h2>
+      <p>Answers patient questions, shows services, and links to booking. Available 24/7.</p>
+      <iframe src="https://agent.jotform.com/019756192e6978399301d237042f5452550d"></iframe>
+    </div>
+
+    <div class="agent-card">
+      <h2>🔨 Contractor Assistant</h2>
+      <p>Captures leads, answers service questions, and offers pricing ballparks.</p>
+      <iframe src="https://agent.jotform.com/0197562944237a24bf059597a7366d19f03b"></iframe>
+    </div>
+
+    <div class="agent-card">
+      <h2>💇 Hair Salon Booking Bot</h2>
+      <p>Lets users browse styles, view pricing, and request appointments on the spot.</p>
+      <iframe src="https://agent.jotform.com/019756b82043794fbc937f0dd3ab56f99221"></iframe>
+    </div>
+  </div>
+
+</body>
+</html>
